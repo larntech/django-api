@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  web:
+    build: .
+    restart: always
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8080"
+    container_name: larntech
+    volumes:
+      - .:/larntech
+    ports:
+      - "8080:8080"
