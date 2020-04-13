@@ -38,12 +38,12 @@ schema_view = get_schema_view(
 
 
 routers = routers.DefaultRouter()
-routers.register(r'api/users', views.UserViewSet)
+routers.register(r'users', views.UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
    # url(r'^authenticate/', CustomObtainAuthToken.as_view()),
    url('swagger', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-   path('api/', include(routers.urls)),
+   path('', include(routers.urls)),
 
 ]
