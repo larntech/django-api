@@ -42,7 +42,7 @@ routers.register(r'users', views.UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   # url(r'^authenticate/', CustomObtainAuthToken.as_view()),
+   url(r'^authenticate/', CustomObtainAuthToken.as_view()),
    url('swagger', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
    path('', include(routers.urls)),
 
